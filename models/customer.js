@@ -14,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   customer.init({
-    sn:{
+    id:{
+      allowNull: false,
+      primaryKey: true,
       type: DataTypes.INTEGER,
       autoIncrement:true
     },
