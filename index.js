@@ -5,8 +5,6 @@ const port = process.env.APP_PORT
 const bodyParser = require('body-parser')
 
 
-
-
 app.use(bodyParser.json())
 
 
