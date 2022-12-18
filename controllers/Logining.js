@@ -2,6 +2,7 @@ require('dotenv').config()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const {customer}= require('../models')
+const {validateLogin} = require('../validations/register.validation')
 
 
 
@@ -9,8 +10,8 @@ const {customer}= require('../models')
 
 const Login = async (res, req) =>{
 
-    const {email,password} = req.body
-    
+    const {email,password} = validateLogin(req.body)
+
     try {
         const user = await customer.findAll( { where: { email: email } } )
 

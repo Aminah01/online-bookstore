@@ -15,7 +15,8 @@ function authorization(req,res,next) {
     }
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET, function(err, decoded) {
+        const tokenSplit = token.split(' ')
+        const decoded = jwt.verify(tokenSplit[1], process.env.JWT_SECRET, function(err, decoded) {
             if (err) {
                 throw new Error (err.message)
             }
