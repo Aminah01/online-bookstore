@@ -10,7 +10,8 @@ const validateRegistration = (data)=>{
         email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
         phone: Joi.string().min(2).required(),
         password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
-        repeat_password: Joi.ref('password')
+        repeat_password: Joi.ref('password'),
+        address: Joi.string().min(2).required()
     })
 
     return  schema.validate(data);  

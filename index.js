@@ -15,5 +15,5 @@ app.use(registerRoute)
 
 
 app.listen(port, () => {
-    
+ console.log("aminah is a tech dr")   
 })

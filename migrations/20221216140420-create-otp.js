@@ -9,7 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      otp: { 
+      email_otp: { 
+        type: Sequelize.STRING,
+      },
+      phone_otp: { 
         type: Sequelize.STRING,
       },
       email: {
