@@ -5,12 +5,13 @@ const port = process.env.APP_PORT
 const { Sequelize } = require('sequelize');
 const bodyParser = require('body-parser')
 const registerRoute = require('./routes/customer.route')
-
+const authRoute = require('./routes/auth.route')
 
 
 
 app.use(bodyParser.json())
 app.use(registerRoute)
+app.use(authRoute)
 
 
 
